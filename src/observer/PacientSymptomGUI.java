@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 
 public class PacientSymptomGUI extends JFrame {
+	
 	private JPanel contentPane;
 	private JTextField weightField;
 	JComboBox<Symptom> symptomComboBox;
@@ -79,7 +80,7 @@ public class PacientSymptomGUI extends JFrame {
 				if (new Integer(weightField.getText())<=3) {
 		    	System.out.println("Symptom added :"+(Symptom)symptomComboBox.getSelectedItem());
 
-				//addSymptomByName ...
+		    	p.addSymptomByName(((Symptom)symptomComboBox.getSelectedItem()).getName(), new Integer(weightField.getText()));
 				
 			} else errorLabel.setText("ERROR, Weight between [1..3]");
 				
@@ -95,7 +96,7 @@ public class PacientSymptomGUI extends JFrame {
 
 		    	System.out.println("Symptom removed :"+(Symptom)symptomComboBox.getSelectedItem());
 
-				//removeSymptomByName...
+		    	p.removeSymptomByName(((Symptom)symptomComboBox.getSelectedItem()).getName());
 				
 			} 
 		});
